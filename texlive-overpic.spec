@@ -1,3 +1,9 @@
+# revision 19712
+# category Package
+# catalog-ctan /macros/latex/contrib/overpic
+# catalog-date 2010-09-13 11:39:12 +0200
+# catalog-license lppl
+# catalog-version 0.53
 Name:		texlive-overpic
 Version:	0.53
 Release:	1
@@ -50,6 +56,7 @@ available.
 %doc %{_texmfdistdir}/doc/latex/overpic/overpic-readme-de.tex
 %doc %{_texmfdistdir}/doc/latex/overpic/overpic-readme.pdf
 %doc %{_texmfdistdir}/doc/latex/overpic/overpic-readme.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,3 +67,5 @@ available.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
