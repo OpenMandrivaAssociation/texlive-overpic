@@ -6,7 +6,7 @@
 # catalog-version 0.53
 Name:		texlive-overpic
 Version:	0.53
-Release:	4
+Release:	5
 Summary:	Combine LaTeX commands over included graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/overpic
