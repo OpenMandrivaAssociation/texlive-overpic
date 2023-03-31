@@ -1,6 +1,6 @@
 Name:		texlive-overpic
 Version:	53889
-Release:	1
+Release:	2
 Summary:	Combine LaTeX commands over included graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/overpic
