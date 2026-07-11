@@ -1,44 +1,25 @@
-Name:		texlive-overpic
-Version:	69343
-Release:	1
+%global tl_name overpic
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.2
+Release:	%{tl_revision}.1
 Summary:	Combine LaTeX commands over included graphics
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/overpic
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/overpic.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/overpic.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/overpic.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/overpic.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/overpic.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The overpic environment is a cross between the LaTeX picture
-environment and the \includegraphics command of graphicx. The
-resulting picture environment has the same dimensions as the
-included eps graphic. LaTeX commands can be placed on the
-graphic at defined positions. A grid for orientation is
-available.
+The overpic environment is a cross between the LaTeX picture environment
+and the \includegraphics command of graphicx. The resulting picture
+environment has the same dimensions as the included graphic. LaTeX
+commands can be placed on the graphic at defined positions; a grid for
+orientation is available.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/overpic
-%doc %{_texmfdistdir}/doc/latex/overpic
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
