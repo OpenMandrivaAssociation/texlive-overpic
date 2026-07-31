@@ -1,9 +1,9 @@
 %global tl_name overpic
-%global tl_revision 77682
+%global tl_revision 79813
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	2.2
+Version:	2.3
 Release:	%{tl_revision}.1
 Summary:	Combine LaTeX commands over included graphics
 Group:		Publishing
